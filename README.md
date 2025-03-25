@@ -3,12 +3,17 @@
 >This project implements and verifies an Arithmetic Logic Unit (ALU) using Universal Verification Methodology (UVM). The ALU performs various arithmetic and logical operations with comprehensive UVM-based verification.
 
 ## 🚀 Table of Contents
-- **ALU Design** 
+- **ALU Design** : `Module Interface` `State Machine Architecture` `Special Handling`
+
 
 ## ⚙️ ALU Design
 This is a configurable Arithmetic Logic Unit (ALU) implemented in SystemVerilog using a Finite State Machine (FSM) architecture. The ALU performs various arithmetic and logical operations on two input operands based on control signals and operation codes.
 
 ### Module Interface
+
+<p align="left">
+  <img width="600"  src="Images/alu.jpg"><br>
+</p>
 
 >##### Parameters
 | Parameter     | Type    | Default | Description                     |
@@ -33,6 +38,28 @@ This is a configurable Arithmetic Logic Unit (ALU) implemented in SystemVerilog 
 |---------------|-----------|-------------|-------|---------------------------------|
 | `ALU_output`  | output    | Data_Width+1| reg   | ALU result (signed)             |
 
+
+### State Machine Architecture
+The ALU implements a 4-state Finite State Machine (FSM) that controls all operations which are:<br>
+1- `IDLE State (2'b00)`<br>
+2- `Operand1_set State (2'b01): ADD, SUB, XOR, AND1, AND2, XNOR, OR, NULL`<br>
+3- `Operand2_set1 State (2'b10): NAND, ADD1, ADD2, NULL`<br>
+4- `Operand2_set2 State (2'b11): XOR, XNOR, DEC_Operand1, INC_Operand2`<br>
+>##### Machine State diagram
+
+
+### Special Handling
+
+* Same-State Output Issue:
+  * When staying in the same state, the output is recalculated based on new inputs
+  * Prevents output stagnation when performing consecutive operations in the same state
+
+* Bitwise Operation Handling:
+  * All bitwise operations (AND, OR, XOR, etc.) are zero-extended to 6 bits
+  * MSB is explicitly set to 0 for bitwise results
+* Reset Behavior:
+  * Asynchronous reset brings the FSM to IDLE state
+  * Output is maintained during disabled state (ALU_en=0)
 
 ### UVM Verification
 - Complete UVM testbench architecture:
