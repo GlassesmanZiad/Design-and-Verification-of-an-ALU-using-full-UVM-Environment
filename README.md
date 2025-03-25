@@ -12,8 +12,8 @@ This is a configurable Arithmetic Logic Unit (ALU) implemented in SystemVerilog 
 
 ### 🔷Module Interface
 
-<p align="left">
-  <img width="600"  src="Images/alu.jpg"><br>
+<p align="center">
+  <img width="1000"  src="Images/alu.jpg"><br>
 </p>
 
 >##### Parameters
