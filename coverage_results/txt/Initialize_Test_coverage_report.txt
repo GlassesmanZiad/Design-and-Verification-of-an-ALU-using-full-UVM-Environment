@@ -1,0 +1,108 @@
+COVERGROUP COVERAGE:
+-----------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal    Status               
+                                                                                              
+-----------------------------------------------------------------------------------------------
+ TYPE /MyPackage/ALU_Subscriber/inputs_collector      100.00%        100    Covered              
+    covered/total bins:                                    12         12                      
+    missing/total bins:                                     0         12                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint inputs_collector::inputOperand1        100.00%        100    Covered              
+        covered/total bins:                                 3          3                      
+        missing/total bins:                                 0          3                      
+        % Hit:                                        100.00%        100                      
+        bin negative_val                                   61          1    Covered              
+        bin zero_val                                        1          1    Covered              
+        bin positive_val                                   54          1    Covered              
+    Coverpoint inputs_collector::inputOperand2        100.00%        100    Covered              
+        covered/total bins:                                 3          3                      
+        missing/total bins:                                 0          3                      
+        % Hit:                                        100.00%        100                      
+        bin negative_val                                   64          1    Covered              
+        bin zero_val                                        5          1    Covered              
+        bin positive_val                                   47          1    Covered              
+    Coverpoint inputs_collector::inputOperand1_en     100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
+        bin high                                           60          1    Covered              
+        bin low                                            56          1    Covered              
+    Coverpoint inputs_collector::inputOperand2_en     100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
+        bin high                                           58          1    Covered              
+        bin low                                            58          1    Covered              
+    Coverpoint inputs_collector::inputALU_en          100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
+        bin high                                          100          1    Covered              
+        bin low                                            16          1    Covered              
+ TYPE /MyPackage/ALU_Subscriber/operand1_op           100.00%        100    Covered              
+    covered/total bins:                                     8          8                      
+    missing/total bins:                                     0          8                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint operand1_op::operand1_set              100.00%        100    Covered              
+        covered/total bins:                                 8          8                      
+        missing/total bins:                                 0          8                      
+        % Hit:                                        100.00%        100                      
+        bin ADD                                            14          1    Covered              
+        bin SUB                                            15          1    Covered              
+        bin XOR                                            20          1    Covered              
+        bin AND1                                           21          1    Covered              
+        bin AND2                                           13          1    Covered              
+        bin XNOR                                           10          1    Covered              
+        bin OR                                             10          1    Covered              
+        bin NULL                                           13          1    Covered              
+ TYPE /MyPackage/ALU_Subscriber/operand2_op_set1      100.00%        100    Covered              
+    covered/total bins:                                     4          4                      
+    missing/total bins:                                     0          4                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint operand2_op_set1::operand2_set1        100.00%        100    Covered              
+        covered/total bins:                                 4          4                      
+        missing/total bins:                                 0          4                      
+        % Hit:                                        100.00%        100                      
+        bin NAND                                            6          1    Covered              
+        bin ADD1                                            4          1    Covered              
+        bin ADD2                                           12          1    Covered              
+        bin NULL                                            8          1    Covered              
+ TYPE /MyPackage/ALU_Subscriber/operand2_op_set2      100.00%        100    Covered              
+    covered/total bins:                                     4          4                      
+    missing/total bins:                                     0          4                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint operand2_op_set2::operand2_set2        100.00%        100    Covered              
+        covered/total bins:                                 4          4                      
+        missing/total bins:                                 0          4                      
+        % Hit:                                        100.00%        100                      
+        bin XOR                                             4          1    Covered              
+        bin XNOR                                            6          1    Covered              
+        bin DEC_Operand1                                   12          1    Covered              
+        bin INC_Operand2                                    6          1    Covered              
+ TYPE /MyPackage/ALU_Subscriber/output_collector      100.00%        100    Covered              
+    covered/total bins:                                     3          3                      
+    missing/total bins:                                     0          3                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint output_collector::operand2_set2        100.00%        100    Covered              
+        covered/total bins:                                 3          3                      
+        missing/total bins:                                 0          3                      
+        % Hit:                                        100.00%        100                      
+        bin negative_val                                   30          1    Covered              
+        bin zero_val                                       23          1    Covered              
+        bin positive_val                                   63          1    Covered              
+
+TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 5
+
+ASSERTION RESULTS:
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/Top/intf/assert__Valid_out_Asser
+                     ALU_intf.sv(64)                    0          1
+/Top/intf/assert__Operand2_set2_Asser
+                     ALU_intf.sv(54)                    0          1
+/Top/intf/assert__ALU_output_correct
+                     ALU_intf.sv(45)                    0          1
+/Top/intf/assert__ALU_en_Stability_Asser
+                     ALU_intf.sv(36)                    0          1
