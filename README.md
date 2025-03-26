@@ -80,10 +80,10 @@ This diagram illustrates the Universal Verification Methodology (UVM) testbench 
 </p>
 
 ### Tests:
-1- **`Initialize_Test`**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--> Basic config and sanity check&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--> run 2 sequences <br>
-2- **`Operand1_set_test`**&nbsp;&nbsp;&nbsp;--> Operand1 operations validation&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--> run 4 sequences <br> 
-3- **`Operand2_set1_test`**&nbsp;&nbsp;--> Operand2 first set operations validation&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--> run 4 sequences<br>
-4- **`Operand2_set2_test`**&nbsp;&nbsp;--> Operand2 second set operations	validation --> run 4 sequences<br>
+1- **`Initialize_Test`** --> Basic config and sanity check --> run 2 sequences <br>
+2- **`Operand1_set_test`** --> Operand1 operations validation --> run 4 sequences <br> 
+3- **`Operand2_set1_test`** --> Operand2 first set operations validation --> run 4 sequences<br>
+4- **`Operand2_set2_test`** --> Operand2 second set operations	validation --> run 4 sequences<br>
 
 ### Results:
 
